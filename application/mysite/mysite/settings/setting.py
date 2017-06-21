@@ -69,7 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -83,8 +82,8 @@ DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'mysite_db',
-        'USER':'yetongxue',
-        'PASSWORD':'qwerasdf',
+        'USER':'root',
+        'PASSWORD':'123456',
         'HOST':'',
         'PORT':3306,
         'OPTIONS':{
