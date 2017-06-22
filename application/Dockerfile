@@ -14,7 +14,20 @@
 
 FROM ubuntu:16.04
 
-MAINTAINER Dockerfiles
+MAINTAINER yetongxue
+
+# Local directory with project source
+ENV DOCKER_SRC=mysite
+# Directory in container for all project files
+ENV DOCKER_HOME=/root
+# Directory in container for project source files
+ENV DOCKER_PROJECT=/root/project
+
+# Create application subdirectories
+WORKDIR $DOCKER_HOME
+RUN mkdir media static logs
+VOLUME ["$DOCKER_HOME/media/", "$DOCKER_HOME/logs/"]
+
 
 # Install required packages and remove the apt packages cache when done.
 
@@ -36,22 +49,18 @@ RUN pip install uwsgi
 
 # setup all the configfiles
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY mysite_nginx.conf /etc/nginx/sites-available/default
 COPY supervisor-app.conf /etc/supervisor/conf.d/
 
 # COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
 # to prevent re-installinig (all your) dependencies when you made a change a line or two in your app.
 
-COPY requirements.txt /home/docker/code/app/
-RUN pip install -r /home/docker/code/app/requirements.txt
+COPY . $DOCKER_PROJECT
+RUN pip install -r requirement.txt
 
-# add (the rest of) our code
-COPY . /home/docker/code/
 
-# install django, normally you would remove this step because your project would already
-# be installed in the code/app/ directory
-#RUN django-admin.py startproject website /home/docker/code/app/
-RUN python mysite/manage.py migrate
-
-EXPOSE 80
+EXPOSE 8000
 CMD ["supervisord", "-n"]
+
+# Copy entrypoint script into the image
+ENTRYPOINT ["entry_point.sh"]
