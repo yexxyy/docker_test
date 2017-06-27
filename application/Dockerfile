@@ -12,9 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ubuntu:16.04
+FROM centos:centos7
 
 MAINTAINER yetongxue
+
+ENV TZ "Asia/Shanghai"
 
 # Local directory with project source
 ENV DOCKER_SRC=mysite
@@ -30,37 +32,16 @@ VOLUME ["$DOCKER_HOME/media/", "$DOCKER_HOME/logs/"]
 
 
 # Install required packages and remove the apt packages cache when done.
-
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y \
-	git \
-	python \
-	python-dev \
-	python-setuptools \
-	python-pip \
-	nginx \
-	supervisor && \
-	pip install -U pip setuptools && \
-  	rm -rf /var/lib/apt/lists/*
-
-# install uwsgi now because it takes a little while
-RUN pip install uwsgi
-
-# setup all the configfiles
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY mysite_nginx.conf /etc/nginx/sites-available/default
-COPY supervisor-app.conf /etc/supervisor/conf.d/
-
-# COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
-# to prevent re-installinig (all your) dependencies when you made a change a line or two in your app.
-
-COPY . $DOCKER_PROJECT
-RUN pip install -r requirement.txt
+RUN yum -y install epel-release && \
+    yum -y install python-pip && \
+    yum -y install git nginx gcc gcc-c++ python-devel && yum clean all && \
+    pip install --upgrade pip && \
+    pip install uwsgi
 
 
-EXPOSE 8000
-CMD ["supervisord", "-n"]
 
-# Copy entrypoint script into the image
-ENTRYPOINT ["entry_point.sh"]
+
+
+
+
+
