@@ -40,6 +40,10 @@ RUN yum -y install epel-release && \
 WORKDIR $DOCKER_PROJECT
 COPY ./ ./
 
+EXPOSE 8000
+RUN chmod u+x /start_script
+ENTRYPOINT ["/start_script"]
+
 
 
 
