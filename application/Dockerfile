@@ -37,6 +37,11 @@ RUN yum -y install epel-release && \
     pip install uwsgi
 
 
+WORKDIR $DOCKER_PROJECT
+COPY ./ ./
+
+
+
 
 
 
