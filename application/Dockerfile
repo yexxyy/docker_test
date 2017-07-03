@@ -40,9 +40,11 @@ RUN yum -y install epel-release && \
 WORKDIR $DOCKER_PROJECT
 COPY ./ ./
 
+RUN pip install -r requirements.txt
+
 EXPOSE 8000
-RUN chmod u+x /start_script
-ENTRYPOINT ["/start_script"]
+RUN chmod u+x start_script
+ENTRYPOINT ["./start_script"]
 
 
 

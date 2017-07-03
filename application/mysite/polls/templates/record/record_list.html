@@ -1,0 +1,125 @@
+{% load staticfiles %}
+
+<style type="text/css">
+  
+  .row{
+  padding-top: 5px;
+  padding-left: 5%;
+}
+.col-md-5{
+  width: 180px;
+  height:120px;
+  border:1px solid #222;
+  padding: 10px;
+}
+
+.col-md-5 .banner{
+  width: 100%;
+  height:100%;
+  border:1px solid #aaaaaa;
+}
+
+.play_icon{
+  width: 50px;
+  height: 50px;
+
+  align-content: center;
+
+}
+
+.col-md-8{
+
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-right: 0px;
+  font-size: 16px;
+}
+
+.text-content{
+  padding-top: 0px;
+  padding-left: 3%;
+  font-size: 16px;
+}
+.text-content p{
+  padding-left: 16px;
+}
+.col-md-1{
+  height: 120px;
+  width: auto;
+}
+img#photo_img{
+  height: 120px;
+  width: auto;
+  padding-bottom: 20px;
+}
+
+.cell_content{
+  padding-bottom: 10px;
+}
+
+.cell_content .title{
+  padding-bottom: 8px;
+}
+
+.publish_time{
+  padding-bottom: 15px;
+}
+
+</style>
+
+<!-- 视频cell -->
+  <script type="text/template" id="video_template">
+  <div class="cell_content">
+  <div class="tab-pane">
+  <hr class="devider"/>
+  <!-- 时间 -->
+    <h2 class="publish_time"></h2>
+      <div class="row">
+      <div class="col-md-5">
+        <div class="icon_and_bg" >
+            <div style="position: absolute;top:30px;left:65px;">
+              <img class="play_icon" src="{% static 'imgs/play_icon.png' %}"/><!--子视图  -->
+            </div>
+            <img src=""  class="banner"/><!--父视图 -->
+        </div>
+      </div>
+      <div class="col-md-8">
+        <p class="description"></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </script><!-- 视频cell -->
+
+<!-- 文章cell -->
+  <script type="text/template" id="text_template">
+    <div class="cell_content">
+    <hr class="devider"/>
+      <!-- 时间 -->
+      <h2 class="publish_time"></h2>
+
+      <div class="text-content">
+        <h4 class="title"></h4>
+        <p class="description"></p>
+      </div>
+    </div>
+</script><!-- 文章cell -->
+
+
+<!-- 摄影图片展示cell -->
+  <script type="text/template" id="phote_template">
+    <div class="cell_content">
+      <hr class="devider"/>
+      <!-- 时间 -->
+      <h2 class="publish_time"></h2>
+      <p class="text-content"></p>
+      <div class="row"></div>
+    </div>
+  </script><!-- 摄影图片展示cell -->
+
+<!-- 摄影图片 -->
+<script type="text/template" id="img_template">
+  <div class="col-md-1">
+    <img src="" id="photo_img">
+  </div>
+</script><!-- 摄影图片 -->

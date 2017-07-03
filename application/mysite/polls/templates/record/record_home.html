@@ -1,0 +1,426 @@
+{% load staticfiles %}
+
+
+<style type="text/css">
+	
+	#carousel-example-generic img{
+		width: 100%;
+		height: auto;
+	}
+	
+	
+	#tian_shape_hold .col-md-6 img{
+		background: #909;
+		width: 100%;
+	}
+
+	#our_team_hold .col-md-4 img {
+		width: 100px;
+		height: 100px;
+	}
+
+	.home_team_info{
+		color: #ffffff;
+	}
+
+	.stats_backgrand_img{
+		background: url({% static 'imgs/black_bg.jpg' %});
+	}
+
+	
+
+</style>
+<!--http://img02.tooopen.com/images/20160408/tooopen_sy_158723161481.jpg-->
+
+<!-- 广告 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel"  data-interval="3000">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="{% static 'imgs/advertizement_pic4.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'imgs/advertisement_pic3.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="{% static 'imgs/advertisement_pic5.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+
+
+    <div class="item">
+      <img src="{% static 'imgs/advertisement_pic6.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div><!-- /广告 -->
+
+
+
+
+
+<!-- 服务介绍 -->
+<section class="service" id="service">
+	<div class="container">
+		<h2 class="text-center">我们的服务</h2>
+		<p class="text-center">摄影摄像</p>
+		<div class="row">
+			<div class="col-lg-4 col-md-4 serv-w3ls">
+				<i class="fa fa-plane" aria-hidden="true"></i>
+				<h4>摄影摄像</h4>
+				<p class="serv-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				<span class="line1"></span>
+			</div>
+			<div class="col-lg-4 col-md-4 serv-w3ls">
+				<i class="fa fa-suitcase" aria-hidden="true"></i>
+				<h4>婚纱照、婚礼跟拍</h4>
+				<p class="serv-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+				<span class="line1"></span>
+			</div>
+			<div class="col-lg-4 col-md-4 serv-w3ls">
+				<i class="fa fa-globe" aria-hidden="true"></i>
+				<h4>毕业季记录等</h4>
+				<p class="serv-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /服务介绍 -->
+
+
+<!-- 田字格-->
+<section class="event">
+	<div class="container-fluid">
+		<div class="row event-agile1" style="padding:0px;">
+			<div class="col-lg-6 col-md-6 event-w3ls" style="padding:0px;height:100%;">
+				<div class="event-info">
+					<p class="event-p1">July 2016 | Lorem Ipsum</p>
+					<h3>Sit Amet Consectetur</h3>
+					<p class="event-p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean turpis tortor, ultrices eu dignissim egestas, auctor at nibh. Duis eget auctor risus, ac vehicula ipsum. Morbi consequat, enim sit amet congue hendrerit, orci leo sollicitudin lacus, sed aliquet arcu ipsum non urna. Donec dictum libero odio, et eleifend magna faucibus eu.</p>
+					<p class="event-p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean turpis tortor, ultrices eu dignissim egestas, auctor at nibh.</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 event-w3ls" style="padding:0px;height:100%;">
+				<div class="hover01 column" style="height:100%;">
+					<div style="height:100%;">
+						<figure><img src="http://img02.tooopen.com/images/20160408/tooopen_sy_158723161481.jpg" alt="w3layouts" title="w3layouts" class="img-responsive" style="height:100%;"></figure>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row event-agile2" style="padding:0px;">	
+			<div class="col-lg-6 col-md-6 event-w3ls" style="padding:0px;height:100%;">
+				<div class="hover01 column">
+					<div>
+						<figure><img src="http://img02.tooopen.com/images/20160408/tooopen_sy_158723161481.jpg" alt="w3layouts" title="w3layouts" class="img-responsive" style="height:100%;"></figure>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 event-w3ls" style="padding:0px;">
+				<div class="event-info">
+					<p class="event-p1">July 2016 | Lorem Ipsum</p>
+					<h3>Phasellus at mauris</h3>
+					<p class="event-p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean turpis tortor, ultrices eu dignissim egestas, auctor at nibh. Duis eget auctor risus, ac vehicula ipsum. Morbi consequat, enim sit amet congue hendrerit, orci leo sollicitudin lacus, sed aliquet arcu ipsum non urna. Donec dictum libero odio, et eleifend magna faucibus eu.</p>
+					<p class="event-p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean turpis tortor, ultrices eu dignissim egestas, auctor at nibh.</p>
+				</div>
+			</div>
+		</div>	
+	</div>	
+</section>
+<!-- /田字格 -->
+
+<!-- 我们的团队 -->
+<section class="team" id="team">
+	<div class="container">
+		<h3 class="text-center">我们的团队</h3>
+		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
+				<div class="view view-third">
+                    <img src="http://s03.lmbang.com/M00/51/BB/eQ519FQcJIaATg2bAAK3rFJHF8Q839.jpg!r750x600x100.jpg" alt="w3layouts" title="w3layouts" class="img-responsive">
+                    <div class="mask">
+                        <h4>叶业力</h4>
+                        <ul class="social-icons2">
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
+						</ul>	
+                        <p class="home_team_info">2013年毕业,摄影/摄像/剪辑师.同时也是iOS/Django/Web开发者</p>
+                    </div>
+                </div>	
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
+				<div class="view view-third">
+                    <img src="http://s03.lmbang.com/M00/51/BB/eQ519FQcJIaATg2bAAK3rFJHF8Q839.jpg!r750x600x100.jpg" alt="w3layouts" title="w3layouts" class="img-responsive">
+                    <div class="mask">
+                        <h4>Diana</h4>
+                        <ul class="social-icons2">
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
+						</ul>	
+                        <p class="home_team_info">Director</p>
+                    </div>
+                </div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
+				<div class="view view-third">
+                    <img src="http://s03.lmbang.com/M00/51/BB/eQ519FQcJIaATg2bAAK3rFJHF8Q839.jpg!r750x600x100.jpg" alt="w3layouts" title="w3layouts" class="img-responsive">
+                    <div class="mask">
+                        <h4>Max payne</h4>
+                        <ul class="social-icons2">
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
+						</ul>	
+                        <p class="home_team_info">Manager</p>
+                    </div>
+                </div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
+				<div class="view view-third">
+                    <img src="http://s03.lmbang.com/M00/51/BB/eQ519FQcJIaATg2bAAK3rFJHF8Q839.jpg!r750x600x100.jpg" alt="w3layouts" title="w3layouts" class="img-responsive">
+                    <div class="mask">
+                        <h4>Johnny Blaze</h4>
+                        <ul class="social-icons2">
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
+						</ul>	
+                        <p class="home_team_info">Supervisor</p>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /我们的团队 -->
+
+
+
+
+<!-- 我们的作品 -->
+<section class="work" id="work">
+	<h3 class="text-center">我们的作品</h3>
+	<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<div class="gallery-grids">
+		<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+
+			<div id="myTabContent" class="tab-content">
+				<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					<div class="tab_img">
+
+
+						<div class="col-md-3 col-sm-6 col-xs-6 portfolio-grids">
+							<a href="javascript:;" class="lightninBox" data-lb-group="1">
+								<img src="{% static 'imgs/advertisement_pic6.jpg' %}" class="img-responsive zoom-img" alt=""/>
+								<div class="b-wrapper">
+									
+									<h5>Hotels & Ocean Scenery</h5>
+									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+								</div>
+							</a>
+						</div>
+
+						<div class="col-md-3 col-sm-6 col-xs-6 portfolio-grids">
+							<a href="javascript:;" class="lightninBox" data-lb-group="1">
+								<img src="{% static 'imgs/advertisement_pic5.jpg' %}" class="img-responsive zoom-img" alt=""/>
+								<div class="b-wrapper">
+
+									<h5>Hotels & Ocean Scenery</h5>
+									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+								</div>
+							</a>
+						</div>
+
+
+						<div class="col-md-3 col-sm-6 col-xs-6 portfolio-grids">
+							<a href="javascript:;" class="lightninBox" data-lb-group="1">
+								<img src="{% static 'imgs/advertisement_pic3.jpg' %}" class="img-responsive zoom-img" alt=""/>
+								<div class="b-wrapper">
+
+									<h5>Hotels & Ocean Scenery</h5>
+									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+								</div>
+							</a>
+						</div>
+
+
+						<div class="col-md-3 col-sm-6 col-xs-6 portfolio-grids">
+							<a href="javascript:;" class="lightninBox" data-lb-group="1">
+								<img src="{% static 'imgs/advertizement_pic4.jpg' %}" class="img-responsive zoom-img" alt=""/>
+								<div class="b-wrapper">
+
+									<h5>Hotels & Ocean Scenery</h5>
+									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+								</div>
+							</a>
+						</div>
+
+
+
+
+
+
+
+
+						<div class="clearfix"> </div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+<!-- /我们的作品 -->
+
+<!-- testimonial section -->
+<section class="test">
+	<div class="container">
+		<h3 class="text-center">Our Testimonials</h3>
+		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam convallis augue at auctor mollis. Aliquam sollicitudin accumsan scelerisque. Sed aliquet elit vitae ex posuere, a fringilla metus congue.</p>
+								</div>
+								<!--<div class="test-agile">
+									<img src="images/test-img1.jpg" alt="w3layouts" title="w3layouts" class="img-circle img-responsive">
+									<h4>Kate Winslet,<span>Chairman</span></h4>
+									<div class="clearfix"></div>	
+								</div>-->
+							</div>	
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">
+								<div class="test-w3ls">
+									<p class="test-p1">In rutrum massa ut tempus finibus. Integer auctor pulvinar libero vitae varius. Phasellus eget placerat mauris. Pellentesque pretium, urna vitae finibus mattis, quam nisi vehicula dui, in tincidunt eros turpis eu velit.</p>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="item">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">
+								<div class="test-w3ls">
+									<p class="test-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam convallis augue at auctor mollis. Aliquam sollicitudin accumsan scelerisque. Sed aliquet elit vitae ex posuere, a fringilla metus congue.</p>
+								</div>
+								
+							</div>
+						</div>	
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">In rutrum massa ut tempus finibus. Integer auctor pulvinar libero vitae varius. Phasellus eget placerat mauris. Pellentesque pretium, urna vitae finibus mattis, quam nisi vehicula dui, in tincidunt eros turpis eu velit.</p>
+								</div>
+								
+							</div>
+						</div>
+					</div> 
+				</div>	
+				<div class="item">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam convallis augue at auctor mollis. Aliquam sollicitudin accumsan scelerisque. Sed aliquet elit vitae ex posuere, a fringilla metus congue.</p>
+								</div>
+								
+							</div>
+						</div>	
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">In rutrum massa ut tempus finibus. Integer auctor pulvinar libero vitae varius. Phasellus eget placerat mauris. Pellentesque pretium, urna vitae finibus mattis, quam nisi vehicula dui, in tincidunt eros turpis eu velit.</p>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+<!-- /testimonial section -->
+
+
+<!-- 静态背景 -->
+<section class="stats  stats_backgrand_img" id="stats">
+	<div class="container">	
+		<div class="row">
+			<div class="col-md-3 col-sm-3 stats-grid stats-grid-1">
+				<div class="numscroller" data-slno='1' data-min='0' data-max='158' data-delay='3' data-increment="1">85</div>
+				<i class="fa fa-money" aria-hidden="true"></i>
+				<h4>Companies</h4>
+			</div>
+			<div class="col-md-3 col-sm-3 stats-grid stats-grid-2">
+				<div class="numscroller" data-slno='1' data-min='0' data-max='63' data-delay='3' data-increment="1">95</div>
+				<i class="fa fa-trophy" aria-hidden="true"></i>
+				<h4>Awards Won</h4>
+			</div>
+			<div class="col-md-3 col-sm-3 stats-grid stats-grid-3">
+				<div class="numscroller" data-slno='1' data-min='0' data-max='421' data-delay='3' data-increment="1">80</div>
+				<i class="fa fa-users" aria-hidden="true"></i>
+				<h4>Happy Clients</h4>
+			</div>
+			<div class="col-md-3 col-sm-3 stats-grid stats-grid-4">
+				<div class="numscroller" data-slno='1' data-min='0' data-max='562' data-delay='3' data-increment="1">90</div>
+				<i class="fa fa-star" aria-hidden="true"></i>
+				<h4>Ratings</h4>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /静态背景 -->
+
+
+
+

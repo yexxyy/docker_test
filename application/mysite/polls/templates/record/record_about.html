@@ -1,0 +1,207 @@
+{% load staticfiles %}
+
+
+<style type="text/css">
+    
+.main-footer{
+    background: #333;
+    
+}
+
+
+.main-footer h5{
+    color: #eee;
+}
+
+.footer-unit li a {
+    color: #ddaa00;
+}
+
+.about_icon_size{
+	width: 60px;
+	height: 60px;
+}
+
+
+
+.container_hold{
+	
+	padding:100px 0;
+    background-repeat:no-repeat;
+    background-position:left;
+  
+    background-size:auto 100%;
+    -webkit-background-size:auto 100%;
+    -moz-background-size:auto 100%;
+    -o-background-size:auto 100%;
+    -ms-background-size:auto 100%;
+}
+
+.notify{
+	padding-top: 100px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+
+.footer-content{
+	padding-top: 20px;
+	padding-bottom: 15px;
+}
+
+.footer_content_header{
+	padding-bottom: 10px;
+}
+
+</style>
+<!-- 藤蔓背景 background: url({% static 'imgs/tenwan2.png' %});-->
+
+
+<section class="notify">
+	<p style="font-size:25px;color:#666">欢迎使用微信扫描屏幕下方二维码关注公众号,以此了解最新动态...</p>
+</section>
+
+
+<!-- contact section -->
+<section class="contact container_hold" id="contact">
+	<div class="container" >
+		<div class="col-lg-6 col-md-6 contact-wthree1">
+			<h3 class="head1">联系信息:</h3>
+			<div class="contact-w3ls">
+				<div class="row">
+					<div class="col-xs-4 contact-agile1">
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/location_icon.png' %}"></i>
+					</div>
+					<div class="col-xs-8 contact-agile2">
+						<div class="address">
+							<h4>地 址</h4>
+							<p>成都市一环路菊乐路(成都体育学院附近)</p>
+						</div>	
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col-xs-4 contact-agile1">
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/mail_icon.png' %}"></i>
+					</div>
+					<div class="col-xs-8 contact-agile2">
+						<div class="address">
+							<h4>邮 箱</h4>
+							<p><a href="mailto:email@example.com">yeliphoto@qq.com</a></p>
+						</div>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4 contact-agile1">
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/phone_icon.png'' %}"></i>
+					</div>
+					<div class="col-xs-8 contact-agile2">
+						<div class="address">
+							<h4>微信</h4>
+							<p>yeshifu_599</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4 contact-agile1">
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/time_icon.png'' %}"></i>
+					</div>
+					<div class="col-xs-8 contact-agile2">
+						<div class="address">
+							<h4>工作时间</h4>
+							<p>星期六 - 星期日 : 10:00 - 18:00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 contact-wthree2">
+			<h3 class="head2">您的信息</h3>
+			<form id="contact_info_form"action="record/contact/" method="post"> <!--  -->
+				{% csrf_token %}
+				<div class="row">
+					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
+						<input type="text" class="form-control first-name" name="name" placeholder="您的姓名" required style="background-color:transparent" id="contact_info_name" />
+					</div>
+					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
+						<input type="email" class="form-control mail" name="email" placeholder="您的邮箱" required style="background-color:transparent" id="contact_info_email" />
+					</div>
+					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
+						<input type="tel" class="form-control pno" name="phone" placeholder="您的电话号码" required style="background-color:transparent" id="contact_info_phone" />
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-group col-lg-12 slideanim">
+						<textarea class="form-control" rows="6" name="message" placeholder="备注信息,请填写您需要的服务内容. 比如:手机软件开发/网页制作/摄影约拍/婚礼摄像之类..." style="background-color:transparent" id="contact_info_message"></textarea>
+					</div>
+					<div class="form-group col-lg-12 slideanim">
+						<button class="btn btn-lg btn-outline" id='contact-info-submit'>发送</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+<!-- /contact section -->
+
+
+
+
+
+
+
+
+<!--尾视图-->
+<footer class="main-footer">
+  <div class="container">
+    <div class="row">
+
+
+
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li class="footer_content_header">
+            <h5>提供的服务</h5></li>
+          <li><a href="#" target="_blank">手机软件开发</a></li>
+          <li><a href="#" target="_blank">网页制作</a></li>
+          <li><a href="#" target="_blank">摄影约拍</a></li>
+          <li><a href="#" target="_blank">婚礼摄像</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li class="footer_content_header">
+            <h5>友情链接</h5></li>
+          <li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy/videos" target="_blank">优酷主页</a></li>
+          <li><a href="http://www.mafengwo.cn/u/91530380.html" target="_blank">马蜂窝主页</a></li>
+          <li><a href="http://weibo.com/u/3431043174?refer_flag=1001030201_&is_hot=1" target="_blank">新浪微博</a></li>
+        </ul>
+      </div>
+
+      
+
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li class="footer_content_header">
+            <h5>在线咨询</h5></li>
+          <li><a href="#" target="_blank">QQ: 570321129</a></li>
+          <li><a href="#" target="_blank">微信: yeshifu_599</a></li>
+        </ul>
+      </div>
+
+      
+
+
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li class="footer_content_header">
+          	<h5>微信公众号</h5></li>
+          <li><img src="{% static 'imgs/two_code.jpg' %}" alt="官方微信" width="90"></li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</footer><!--/尾视图-->
+
+
+

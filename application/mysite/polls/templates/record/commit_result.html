@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提交状态</title>
+
+    <link rel="shortcut icon" href="{% static 'imgs/bitbug_favicon.ico' %}"/>
+    <!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <style type="text/css">
+    	.result_hold_view{
+
+    		padding: 0px;
+    		background: #888;
+    		height: 100px;
+    		width: 200px;
+    	}
+
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <div class="result_hold_view">
+    	<p>{{name}}</p>
+    	<button>返回主页</button>
+    </div>
+
+	<script src='{% static "record/jquery.min.js" %}'></script>
+    <script src='{% static "bootstrap/js/bootstrap.min.js" %}'></script>
+
+</body>
+</html>

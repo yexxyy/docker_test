@@ -13,3 +13,4 @@ def get_asstes(request,file_path):
     response = HttpResponse(content_type='image/jpeg')
     img.convert('RGB').save(response, 'jpeg')
     return response
+
