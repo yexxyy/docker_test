@@ -1,9 +1,16 @@
 #!/bin/bash
 
-cd ./mysite
-python manage.py migrate
+mv ./mysite_nginx.conf /etc/nginx/default.d/
+nginx
 
-python manage.py collectstatic --noinput
-python manage.py runserver 0.0.0.0:8000
+./mysite/manage.py migrate
+./mysite/manage.py collectstatic --noinput
+
+nohup uwsgi --ini mysite_uwsgi.ini > /root/logs/docker_app.log &
+
+
+
+
+
 
 

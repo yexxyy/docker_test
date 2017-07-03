@@ -26,7 +26,8 @@ ENV DOCKER_PROJECT=/root/project
 # Create application subdirectories
 WORKDIR $DOCKER_HOME
 RUN mkdir media static logs
-VOLUME ["$DOCKER_HOME/media/", "$DOCKER_HOME/logs/"]
+
+#VOLUME ["$DOCKER_HOME/media/", "$DOCKER_HOME/logs/"]
 
 
 # Install required packages and remove the apt packages cache when done.
@@ -42,7 +43,7 @@ COPY ./ ./
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8000
+EXPOSE 80
 RUN chmod u+x start_script
 ENTRYPOINT ["./start_script"]
 
