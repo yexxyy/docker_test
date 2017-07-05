@@ -6,7 +6,7 @@ from setting import *
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(os.path.join(BASE_DIR,os.pardir), 'static'),
 ]
 
 INSTALLED_APPS=BASE_INSTALLED_APPS+MY_INSTALLED_APPS
