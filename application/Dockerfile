@@ -13,7 +13,7 @@
 # limitations under the License.
 
 FROM centos:centos7
-MAINTAINER yetongxue <yeli.photo@qq.com>
+MAINTAINER yetongxue <yeli.studio@qq.com>
 ENV TZ "Asia/Shanghai"
 
 # Local directory with project source
@@ -43,7 +43,7 @@ COPY ./ ./
 
 RUN pip install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 80 8000
 RUN chmod u+x start_script
 ENTRYPOINT ["./start_script"]
 
