@@ -132,7 +132,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/assets/'
+STATICFILES_DIRS = [
+    os.path.join(os.path.join(BASE_DIR,os.pardir), 'static'),
+]
+
+MEDIA_URL = '/media/'
 
 
 from custom import *
