@@ -21,5 +21,5 @@ from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^assets/(?P<file_path>.*)',views.get_asstes),
-    url(r'^index/$',TemplateView.as_view(template_name="index.html")),
+    url(r'^index/$',TemplateView.as_view(template_name="record/index.html")),
 ]
