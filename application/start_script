@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sed -i '/user/{s/nginx/root/}' /etc/nginx/nginx.conf
 ln -s /root/project/mysite_nginx.conf /etc/nginx/conf.d/
 nginx
 
