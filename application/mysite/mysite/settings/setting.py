@@ -73,23 +73,23 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 
     #mysql database setting:
-    # 'default':{
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME':'docker_db',
-    #     'USER':'root',
-    #     'PASSWORD':'123456',
-    #     'HOST':'',
-    #     'PORT':3306,
-    #     'OPTIONS':{
-    #
-    #     }
-    # }
+    'default':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'docker_db',
+        'USER':'admin',
+        'PASSWORD':'qwerasdf',
+        'HOST':'',
+        'PORT':3306,
+        'OPTIONS':{
+
+        }
+    }
 
 }
 

@@ -7,7 +7,7 @@ nginx
 ./mysite/manage.py migrate
 ./mysite/manage.py collectstatic --noinput
 
-uwsgi --ini mysite_uwsgi.ini > /root/logs/docker_app.log
+nohup uwsgi --ini mysite_uwsgi.ini > /root/logs/docker_app.log &
 
 
 
