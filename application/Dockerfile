@@ -33,7 +33,7 @@ RUN mkdir media static logs
 # Install required packages and remove the apt packages cache when done.
 RUN yum -y install epel-release && \
     yum -y install python-pip && \
-    yum -y install git nginx gcc gcc-c++ python-devel && yum clean all && \
+    yum -y install git nginx gcc gcc-c++ python-devel &&yum install mysql && yum clean all &&\
     pip install --upgrade pip && \
     pip install uwsgi
 
@@ -43,7 +43,7 @@ COPY ./ ./
 
 RUN pip install -r requirements.txt
 
-EXPOSE 80 8000
+EXPOSE 8000
 RUN chmod u+x start_script
 ENTRYPOINT ["./start_script"]
 
