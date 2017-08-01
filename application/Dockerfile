@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM centos:centos7
+FROM centos:7
 MAINTAINER yetongxue <yeli.studio@qq.com>
 ENV TZ "Asia/Shanghai"
 
@@ -33,7 +33,7 @@ RUN mkdir media static logs
 # Install required packages and remove the apt packages cache when done.
 RUN yum -y install epel-release && \
     yum -y install python-pip && \
-    yum -y install git nginx gcc gcc-c++ python-devel && yum -y install mysql && yum clean all &&\
+    yum -y install git nginx gcc gcc-c++ python-devel && yum -y install mysql && yum -y install mysql-devel && yum clean all &&\
     pip install --upgrade pip && \
     pip install uwsgi
 
