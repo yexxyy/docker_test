@@ -79,17 +79,21 @@ DATABASES = {
     # }
 
     #mysql database setting:
+    #在容器启动的时候--link db 之后，会在本容器自动添加相关数据库的环境变量
     'default':{
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'docker_db',
         'USER':'root',
         'PASSWORD':'qwerasdf',
-        'HOST':'',
+        'HOST':os.environ.get('DB_PORT_3306_TCP_ADDR'),
         'PORT':3306,
         'OPTIONS':{
 
         }
     }
+
+
+
 
 }
 
