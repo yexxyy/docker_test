@@ -43,7 +43,7 @@ COPY ./ ./
 
 RUN pip install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 80 443
 RUN chmod u+x start_script
 ENTRYPOINT ["./start_script"]
 
