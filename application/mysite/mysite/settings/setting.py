@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-#-*- coding: utf-8 -*-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -79,7 +78,6 @@ DATABASES = {
     # }
 
     #mysql database setting:
-    #在容器启动的时候--link db 之后，会在本容器自动添加相关数据库的环境变量
     'default':{
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'docker_db',
