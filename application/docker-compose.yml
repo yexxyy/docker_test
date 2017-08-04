@@ -1,6 +1,6 @@
 version: 1.0
   web:
-    depends_on:
+    links:
       - db
     image: ye/docker_test:1.0
     ports:
