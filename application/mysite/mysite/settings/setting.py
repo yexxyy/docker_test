@@ -78,6 +78,7 @@ DATABASES = {
     # }
 
     #mysql database setting:
+    #when the container link a mysql container,this container will has the env variable of "DB_PORT_3306_TCP_ADDR", the mysql host.
     'default':{
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'docker_db',
