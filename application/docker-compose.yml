@@ -1,8 +1,8 @@
 version: 1.0
   web:
+    image: ye/docker_test:1.0
     links:
       - db
-    image: ye/docker_test:1.0
     ports:
       - "8100:8000"
     volumes:
