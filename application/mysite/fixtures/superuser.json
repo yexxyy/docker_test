@@ -1,9 +1,9 @@
 [
     { "model": "auth.user",
-        "pk": 2,
+        "pk": 1,
         "fields": {
             "username": "root",
-            "password": "qwerasdf",
+            "password": "pbkdf2_sha256$30000$IdlNbZkEbkO3$4sqwI5SnLPDN2bhelVCE+Hu1rzspQU20OuYfQbW0G+c=",
             "is_superuser": true,
             "is_staff": true,
             "is_active": true
