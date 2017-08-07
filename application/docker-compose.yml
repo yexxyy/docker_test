@@ -1,6 +1,6 @@
 
 web:
-    image: ye/docker_test:1.0
+    image: ye/docker_test:1.2
     links:
       - "db"
     ports:
@@ -8,7 +8,7 @@ web:
     volumes:
       - "/Users/yexianyong/docker_v/media:/root/media"
     restart: always
-    command: ["./wait-for-it.sh", "db:3306"]
+    command: ["./wait-for-it.sh","db:3306"]
 
 db:
     image: mysql:5.7

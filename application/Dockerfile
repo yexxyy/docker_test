@@ -25,7 +25,7 @@ ENV DOCKER_PROJECT=/root/project
 
 # Create application subdirectories
 WORKDIR $DOCKER_HOME
-RUN mkdir media static logs
+RUN mkdir media static
 
 VOLUME ["$DOCKER_HOME/media/"]
 

@@ -115,8 +115,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 
-FIXTURE_DIRS = (
-   os.path.join(os.path.join(BASE_DIR,os.pardir), 'fixtures'),
-)
+# FIXTURE_DIRS = (
+#    os.path.join(os.path.join(BASE_DIR,os.pardir), 'fixtures'),
+# )
 
 from custom import *

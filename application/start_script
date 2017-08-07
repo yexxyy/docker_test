@@ -5,9 +5,10 @@ ln -s /root/project/mysite_nginx.conf /etc/nginx/conf.d/
 nginx
 
 ./mysite/manage.py migrate
+./manage.py loaddata ./fixtures/superuser.json
 ./mysite/manage.py collectstatic --noinput
 
-uwsgi --ini mysite_uwsgi.ini > /root/logs/docker_app.log
+uwsgi --ini mysite_uwsgi.ini
 
 
 
