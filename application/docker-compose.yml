@@ -1,20 +1,21 @@
-#version: 1.0
-web:
-  image: ye/docker_test:1.0
-  links:
-    - db
-  ports:
-    - "8100:8000"
-  volumes:
-    - "/Users/yexianyong/docker_v/media:/root/media"
-  restart: always
 
+web:
+    image: ye/docker_test:1.0
+    links:
+      - "db"
+    ports:
+      - "8100:8000"
+    volumes:
+      - "/Users/yexianyong/docker_v/media:/root/media"
+    restart: always
 
 db:
-  image: mysql:5.7
-  environment:
-    MYSQL_ROOT_PASSWORD: qwerasdf
-    MYSQL_DATABASE: docker_db
-  restart: always
-  volumes:
-    - "/Users/yexianyong/docker_v/db:/var/lib/mysql"
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: qwerasdf
+      MYSQL_DATABASE: docker_db
+    restart: always
+    volumes:
+      - "/Users/yexianyong/docker_v/db:/var/lib/mysql"
+
+
