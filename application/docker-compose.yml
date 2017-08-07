@@ -1,6 +1,6 @@
 
 web:
-    image: ye/docker_test:1.2
+    image: ye/docker_test:1.5
     links:
       - "db"
     ports:

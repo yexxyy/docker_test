@@ -4,15 +4,13 @@ sed -i '/user/{s/nginx/root/}' /etc/nginx/nginx.conf
 ln -s /root/project/mysite_nginx.conf /etc/nginx/conf.d/
 nginx
 
-./mysite/manage.py migrate
+cd mysite
+./manage.py migrate
 ./manage.py loaddata ./fixtures/superuser.json
-./mysite/manage.py collectstatic --noinput
+./manage.py collectstatic --noinput
 
+cd ..
 uwsgi --ini mysite_uwsgi.ini
-
-
-
-
 
 
 
