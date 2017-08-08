@@ -1,5 +1,19 @@
 #!/bin/bash
 
+mysql_host=$(DB_PORT_3306_TCP_ADDR)
+mysql_port=3306
+shift 2
+cmd="$@"
+
+# wait for the postgres docker to be running
+while ! nc $postgres_host $postgres_port; do
+  >&2 echo "mysql is unavailable - sleeping"
+  sleep 1
+done
+
+>&2 echo "mysql is up - executing command"
+
+
 sed -i '/user/{s/nginx/root/}' /etc/nginx/nginx.conf
 ln -s /root/project/mysite_nginx.conf /etc/nginx/conf.d/
 nginx
@@ -13,4 +27,4 @@ cd ..
 uwsgi --ini mysite_uwsgi.ini
 
 
-
+exec $cmd
