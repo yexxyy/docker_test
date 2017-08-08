@@ -7,8 +7,6 @@ web:
       - "8100:8000"
     volumes:
       - "/Users/yexianyong/docker_v/docker_test/media:/root/media"
-      - "/Users/yexianyong/docker_v/docker_test/start:/root/project/docker-compose.yml"
-      - "/Users/yexianyong/docker_v/docker_test/start:/root/project/wait-for-it.sh"
     restart: always
     command: ["./wait-for-it.sh","db:3306"]
 
