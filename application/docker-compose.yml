@@ -6,7 +6,9 @@ web:
     ports:
       - "8100:8000"
     volumes:
-      - "/Users/yexianyong/docker_v/media:/root/media"
+      - "/Users/yexianyong/docker_v/docker_test/media:/root/media"
+      - "/Users/yexianyong/docker_v/docker_test/start:/root/project/docker-compose.yml"
+      - "/Users/yexianyong/docker_v/docker_test/start:/root/project/wait-for-it.sh"
     restart: always
     command: ["./wait-for-it.sh","db:3306"]
 
@@ -17,6 +19,6 @@ db:
       MYSQL_DATABASE: docker_db
     restart: always
     volumes:
-      - "/Users/yexianyong/docker_v/db:/var/lib/mysql"
+      - "/Users/yexianyong/docker_v/docker_test/db:/var/lib/mysql"
 
 
