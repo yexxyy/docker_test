@@ -1,3 +1,4 @@
 django
 Pillow
 mysql-python
+uwsgi

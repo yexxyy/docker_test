@@ -33,8 +33,7 @@ VOLUME ["$DOCKER_HOME/media/"]
 RUN yum -y install epel-release && \
     yum -y install python-pip && \
     yum -y install git nginx gcc gcc-c++ python-devel && yum -y install mysql && yum -y install mysql-devel && yum install nc -y && yum clean all &&\
-    pip install --upgrade pip && \
-    pip install uwsgi
+    pip install --upgrade pip
 
 
 WORKDIR $DOCKER_PROJECT
