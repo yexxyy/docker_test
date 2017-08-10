@@ -1,12 +1,14 @@
 #!/bin/bash
 
-sleep 5
 
 #nginx settings
 sed -i '/user/{s/nginx/root/}' /etc/nginx/nginx.conf
 ln -s /root/project/mysite_nginx.conf /etc/nginx/conf.d/
 nginx
 
+chmod u+x wait-for-it.sh
+./wait-for-it.sh $DB_PORT_3306_TCP_ADDR:$DB_PORT_3306_TCP_PORT &
+wait
 
 #application settings
 cd mysite
