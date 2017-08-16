@@ -1,7 +1,6 @@
 #coding=utf-8
-
 from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse,HttpResponseBadRequest
+from django.http import HttpResponse,JsonResponse,HttpResponseBadRequest,HttpResponseRedirect
 from .models import Record,ContactData
 from django.http import Http404
 from django.conf import settings
@@ -79,6 +78,6 @@ def store_user_commit_data(request):
         contectData.mail = mail
         contectData.message = message
         contectData.save()
+        return HttpResponseRedirect ('/index/')
     except:
-        pass
-    return get_record_list_view(request)
+        return HttpResponseRedirect ('/index/contact/')
