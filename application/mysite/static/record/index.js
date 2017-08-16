@@ -48,7 +48,7 @@ function hook_callbacks(){
 function get_about_page(){
 
 	$.ajax({
-		url:host+'/record/about',
+		url:host+'/index/about',
 		type:'get',
 		success:function(content){
 			remove_page_content()
@@ -66,7 +66,7 @@ function get_about_page(){
 function get_home_page(){
 
 	$.ajax({
-		url:host+'/record/home',
+		url:host+'/index/home',
 		type:'get',
 		success:function(content){
 			remove_page_content()
@@ -106,7 +106,7 @@ function get_someday_string(count){
 
 function get_records_content(type_str){
 	$.ajax({
-		url:host+'/record/list/'+type_str,
+		url:host+'/index/list/'+type_str,
 		type:'get',
 		success:function (content){
 

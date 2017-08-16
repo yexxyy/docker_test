@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
 import views
 from django.views.generic import TemplateView
@@ -21,5 +21,11 @@ from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^assets/(?P<file_path>.*)',views.get_asstes),
-    url(r'^index/$',TemplateView.as_view(template_name="record/index.html")),
+    # url(r'^index/$',TemplateView.as_view(template_name="record/index.html")),
+    # url (r'^resources/(?P<file_path>.*)', views.get_pictures),
+    url (r'^ckeditor/', include ('ckeditor_uploader.urls')),
+
+    url (r'^index/', include ('polls.urls')),
+    # url (r'^management/', include ('management.urls'))
+
 ]
