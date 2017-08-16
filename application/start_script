@@ -11,8 +11,9 @@ chmod u+x wait-for-it.sh
 wait
 
 #application settings
+export DJANGO_SETTINGS_MODULE=mysite.settings.server
 cd mysite
-./manage.py migrate
+./manage.py migrate --noinput
 ./manage.py loaddata ./fixtures/superuser.json
 ./manage.py collectstatic --noinput
 
