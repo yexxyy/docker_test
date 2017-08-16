@@ -16,26 +16,6 @@ def pic_upload_path(instance, filename):
 
 
 # Create your models here.
-GENDER=[
-	('m','男'),
-	('f','女')
-]
-
-
-@python_2_unicode_compatible
-class Student(models.Model):
-	name=models.CharField(max_length=10,null=False)
-	gender=models.CharField(max_length=10,choices=GENDER)
-	avatar=models.ImageField(upload_to=pic_upload_path)
-
-	def __str__(self):
-		return self.name
-
-
-
-
-
-
 
 
 #记录model

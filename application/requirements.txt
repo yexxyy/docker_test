@@ -2,3 +2,4 @@ django
 Pillow
 mysql-python
 uwsgi
+django-ckeditor
