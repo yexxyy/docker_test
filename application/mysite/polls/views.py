@@ -78,6 +78,6 @@ def store_user_commit_data(request):
         contectData.mail = mail
         contectData.message = message
         contectData.save()
-        return HttpResponseRedirect ('/index/')
     except:
-        return HttpResponseRedirect ('/index/contact/')
+        pass
+    return HttpResponseRedirect ('/index/')

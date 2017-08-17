@@ -12,10 +12,14 @@ web:
 db:
     image: mysql:5.7
     environment:
+      TZ: 'Asia/Shanghai'
       MYSQL_ROOT_PASSWORD: qwerasdf
       MYSQL_DATABASE: docker_db
     restart: always
+    command: ['mysqld', '--character-set-server=utf8']
     volumes:
       - "/Users/yexianyong/docker_v/docker_test/db:/var/lib/mysql"
+
+
 
 
