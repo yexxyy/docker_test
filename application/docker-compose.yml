@@ -6,7 +6,7 @@ web:
     ports:
       - "8100:8000"
     volumes:
-      - "/Users/yexianyong/docker_v/docker_test/media:/root/media"
+      - "${DOCKER_VOLUME_PATH}/docker_test/media:/root/media"
     restart: always
 
 db:
@@ -18,7 +18,7 @@ db:
     restart: always
     command: ['mysqld', '--character-set-server=utf8']
     volumes:
-      - "/Users/yexianyong/docker_v/docker_test/db:/var/lib/mysql"
+      - "${DOCKER_VOLUME_PATH}/docker_test/db:/var/lib/mysql"
 
 
 
