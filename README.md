@@ -84,6 +84,7 @@ centos                                                    7                   3b
 **如果你还不太熟悉常规部署，请参照[Django uwsgi nginx 应用部署](http://www.jianshu.com/p/d6905be330f4)**
 
 获取demo：`git clone https://github.com/shiyeli/docker_test.git`
+
 ![图1 项目目录结构](http://upload-images.jianshu.io/upload_images/1271438-dafe33fbd909872c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **Dockerfile内容详解**
