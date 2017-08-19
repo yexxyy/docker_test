@@ -13,9 +13,11 @@ https://docs.djangoproject.com/en/1.11/intro/tutorial01/
 Setting up Django and your web server with uWSGI and nginx:
 https://uwsgi.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
 
----
+# docker入门，如何部署Django uwsgi nginx应用
 
 ![](http://upload-images.jianshu.io/upload_images/1271438-b67fdd6631efe10f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+[简书链接](http://www.jianshu.com/p/ef8f17442d8f)
 
 有关docker的介绍啊，为什么 要使用docker啊这些就不说了，因为当你点开这篇作文的时候，你自己心里已经有了答案。那么我们现在就打开电脑，撸起袖子开始docker入门吧。
 
