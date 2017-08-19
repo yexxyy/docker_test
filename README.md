@@ -85,14 +85,11 @@ centos                                                    7                   3b
 
 **挂载数据卷：** `docker run -v host/machine/dir :container/path/dir  --name volume_test_container  centos:7`，说明：数据卷的挂载相当于在宿主机的目录与容器目录创建了一个链接，你修改任何一方的内容，另一方的内容也会同步修改。创建数据卷的作用：当容器被删除的时候，容器内的数据也一起被删除。像数据库、媒体资源等文件我们通常都会使用 -v 将容器中的内容链接到宿主机，这样我们重新创建容器的时候再次-v，数据又回来了。
 
-**启动mysql容器：** `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=qwerasdf -d mysql:5.7
-
-`，默认用户为root，密码qwerasdf
+**启动mysql容器：** `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=qwerasdf -d mysql:5.7`，默认用户为root，密码qwerasdf
 
 mysql容器启动后，其他容器就可以来连接使用了，方法如下：
 
-**容器连接：** `docker run --name some-app --link some-mysql:mysql -d application-that-uses-mysql
-`
+**容器连接：** `docker run --name some-app --link some-mysql:mysql -d application-that-uses-mysql`
 
 ### Dockerfile
 
