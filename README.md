@@ -21,14 +21,16 @@ https://uwsgi.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
 
 有关docker的介绍啊，为什么 要使用docker啊这些就不说了，因为当你点开这篇作文的时候，你自己心里已经有了答案。那么我们现在就打开电脑，撸起袖子开始docker入门吧。
 
-###相关名词
+### 相关名词
+
 **镜像（image）：** 一个打包好的应用，还有应用运行的系统、资源、配置文件等；
+
 
 **容器（container）：** 镜像的实例。你可以这么理解，我们使用对象（镜像）可以alloc出来一个或者多个实例（容器）；
 
 **仓库：** 我们管理代码有github，每个项目创建一个repository，管理镜像也是一样的。
 
-###安装docker
+### 安装docker
 
 在这里下载相应的docker安装就好。
 
@@ -36,8 +38,10 @@ https://uwsgi.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
 
 我们构建自己的镜像是需要基础镜像的，比如CentOS，获取镜像直接从[Docker Hub](https://hub.docker.com/)pull就好，类似git clone操作。但是访问国外网站速度慢，可以到[阿里云](https://dev.aliyun.com/search.html)下载，或者是配置阿里云加速器
 
-###常用命令
+### 常用命令
+
 这尼玛太多了，建议瞅瞅就直接略过吧。需要操作的时候回过来再查找相关命令就好。
+
 **搜索镜像：** `docker search centos`
 
 **获取镜像：** `docker pull registry.cn-hangzhou.aliyuncs.com/1hpc/centos`
@@ -52,28 +56,46 @@ mysql                                                     5.7                 c7
 centos                                                    7                   3bee3060bfc8        2 months ago        193 MB
 ```
 **查看镜像id：** `docker images -q`
+
 **删除镜像：** `docker rmi image_id`
+
 **删除所有镜像：** `docker rmi $(docker images -q)`
+
 **创建容器：** `docker run --name <container_name> centos:7`,container_name是自己定义的容器名
+
 **查看所有容器：** `docker ps -a`
+
 **查看运行容器：** `docker ps`
+
 **查看容器id：** `docker ps -q`
+
 **进入容器：** `docker exec -it <container_id> bash`
+
 **退出容器：** `exit`
+
 **删除容器：** `docker rm <container_id>`
+
 **删除所有容器：** `docker rm $(docker ps -aq)`
+
 **端口映射：** `docker run -d -p 8080:80 hub.c.163.com/library/nginx`，说明：-d 表示后台运行，-p 8080:80 表示将宿主机的8080端口映射到容器端口80。容器开放的端口在镜像说明里面会有，nginx开放80，mysql开放3306，一般本来他们监听什么端口，容器就开放什么端口。
+
 **启动/停止/重启容器：** `docker start/stop/restart <container_id>`
+
 **获取容器/镜像的元数据：** `docker inspect <container_id>`
+
 **挂载数据卷：** `docker run -v host/machine/dir :container/path/dir  --name volume_test_container  centos:7`，说明：数据卷的挂载相当于在宿主机的目录与容器目录创建了一个链接，你修改任何一方的内容，另一方的内容也会同步修改。创建数据卷的作用：当容器被删除的时候，容器内的数据也一起被删除。像数据库、媒体资源等文件我们通常都会使用 -v 将容器中的内容链接到宿主机，这样我们重新创建容器的时候再次-v，数据又回来了。
+
 **启动mysql容器：** `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=qwerasdf -d mysql:5.7
+
 `，默认用户为root，密码qwerasdf
 
 mysql容器启动后，其他容器就可以来连接使用了，方法如下：
+
 **容器连接：** `docker run --name some-app --link some-mysql:mysql -d application-that-uses-mysql
 `
 
-###Dockerfile
+### Dockerfile
+
 以前上学的时候，好多课程学起来感觉没劲，那是因为我们不知道学习它除了考试之外还能做什么。一件事情，我们先有个宏观的认识，然后再分解成很多步骤，那么在每一步的时候，我们才知道这一步我们在做什么，这一步对于整体所具有的意义是什么。那样才会心里有数，做起来也更带感。
 所以Dockerfile指令就不一一说明了，我们直接来整体感受下。
 
@@ -140,7 +162,7 @@ ENTRYPOINT ["./start_script"]
 
 是的是的，咋们继续分解分解...
 
-###启动脚本start_script
+### 启动脚本start_script
 我们刚刚忽略了容器启动后还有执行的命令了。咋们一起来看看start_script里面在做什么。
 ```
 #!/bin/bash
@@ -542,7 +564,7 @@ root@6b5881e8c4b2:/# nl entrypoint.sh
 
 不要担心，还有docker-compose!
 
-###docker-compose
+### docker-compose
 docker-compose是一个服务编排工具，简化复杂应用的利器，使用yaml语法。
 
 对于yaml这里有个专门针对容器编排的教程[[docker-compose.yml 语法说明](http://www.cnblogs.com/freefei/p/5311294.html)](http://www.cnblogs.com/freefei/p/5311294.html)可以瞅瞅。
@@ -576,7 +598,7 @@ db:
 * **还有：** docker-compose start
 其他的就自己--help吧。
 
-###应用的部署
+### 应用的部署
 好了，我们在自己的机器上已经大功告成了。是时候放到另外一台机器跑跑看了。
 
 开始的时候就说到，git 有github，docker 有dockerhub。但是呢，这个dockerhub离我们太远了，网速慢。所以我们用国内的阿里云或者网易蜂巢。
@@ -631,7 +653,7 @@ db:
 
 **It works!**
 
-###写在后面
+### 写在后面
 
 其实我也是个docker初学者，这个教程算是最近一两个月断断续续学习的一个总结吧。写得比较啰嗦，但我的本意是希望尽可能的把我觉得比较重要的点记录下来。程序员是热爱分享的一群人，作为程序员，我们都有看过别人写的教程。作为一个初学者，教程中任何重要信息的遗漏都有可能给我们造成困惑。所以我在每一处都进行了详细的说明。
 
