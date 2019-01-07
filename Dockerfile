@@ -13,7 +13,7 @@
 # limitations under the License.
 
 FROM centos:7
-MAINTAINER yetongxue <yeli.studio@qq.com>
+MAINTAINER yetongxue <me@xander-ye.com>
 ENV TZ "Asia/Shanghai"
 
 # Local directory with project source
